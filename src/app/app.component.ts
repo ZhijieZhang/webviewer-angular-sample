@@ -1,5 +1,5 @@
 import { Component, ViewChild, OnInit, ElementRef, AfterViewInit } from '@angular/core';
-import WebViewer from '@pdftron/webviewer';
+import WebViewer, { CoreControls } from '@pdftron/webviewer';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +11,8 @@ export class AppComponent implements OnInit, AfterViewInit {
   wvInstance: any;
 
   ngAfterViewInit(): void {
+
+    console.log('CoreControls is:', CoreControls, (window as any).CoreControls);
 
     WebViewer({
       path: '../lib',
